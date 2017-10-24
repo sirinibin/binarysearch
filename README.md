@@ -1,5 +1,5 @@
 <p align="center">
-    <h1 align="center">Binary tree search example using console</h1>
+    <h1 align="center">Binary search example using console</h1>
     <br>
 </p>
 
