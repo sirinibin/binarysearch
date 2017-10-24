@@ -3,41 +3,45 @@
     <br>
 </p>
 
-This is a Binary tree search example using console
+This is a Binary search example using console
 
 INSTALLATION & EXECUTION
 
 ```
 Step1:Clone the source code
-git clone -b master https://github.com/sirinibin/binarytree.git
+git clone -b master https://github.com/sirinibin/binarysearch.git
 
-Step2: cd binarytree
+Step2: cd binarysearch
 Step4: php index.php elements.csv 45
 
 O/P:
 
-Given B-tree elements:
-1 3 4 23 26 31 45
+Given elements in sorted order:
+1, 3, 23, 26, 31, 45,230, 300
 
-Searching item 45:
+Searching item 300:
 
-Checking root Node:1
-Not found,so moving to the right child of Node:1 as Search item 45 is > Node 1
+Execution flow:
 
-Checking Node: 3
-Not found,so moving to the right child of Node: 3 as Search item 45 is > Node  3
 
-Checking Node: 4
-Not found,so moving to the right child of Node: 4 as Search item 45 is > Node  4
+ Step1:Set L to 0 and R to n − 1.
 
-Checking Node: 23
-Not found,so moving to the right child of Node: 23 as Search item 45 is > Node  23
+ Step2:If L(=0) > R(=7), the search terminates as unsuccessful.
 
-Checking Node: 26
-Not found,so moving to the right child of Node: 26 as Search item 45 is > Node  26
+ Step3: Set m(=3) (the position of the middle element) to the floor (the largest previous integer) of (L(=0) + R(=7)) / 2.
 
-Checking Node: 31
-Not found,so moving to the right child of Node: 31 as Search item 45 is > Node  31
+ Step4: As Am(= 26) < T(=300), setting L to m(=3) + 1 and go to step 2.
 
-Checking Node: 45
-Result:Item found in Node: 45
+ Step3: Set m(=5) (the position of the middle element) to the floor (the largest previous integer) of (L(=4) + R(=7)) / 2.
+
+ Step4: As Am(= 45) < T(=300), setting L to m(=5) + 1 and go to step 2.
+
+ Step3: Set m(=6) (the position of the middle element) to the floor (the largest previous integer) of (L(=6) + R(=7)) / 2.
+
+ Step4: As Am(=230) < T(=300), setting L to m(=6) + 1 and go to step 2.
+
+ Step3: Set m(=7) (the position of the middle element) to the floor (the largest previous integer) of (L(=7) + R(=7)) / 2.
+
+Step6: Now Am(= 300) = T(=300), the search is done; return m(=7).
+
+Result:Item is present at index 7

@@ -37,7 +37,7 @@ Class App
         if ($index === NULL) {
             echo "\n\nResult:Item Not found\n\n";
         } else {
-            echo "\n\nResult:Item found at index " . $index . "\n\n";
+            echo "\n\nResult:Item is present at index " . $index . "\n\n";
         }
 
     }
