@@ -1,5 +1,4 @@
 <?php
-require_once("BinaryTree.php");
 
 Class App
 {
@@ -12,36 +11,74 @@ Class App
         $search_item = $argv[2];
 
         /*
-         * Declaring a binary tree object
-         * */
-
-        $b = new BinaryTree;
-
-        /*
          * Extract elements from .csv file to insert
          */
         $contents = file_get_contents($elements_file);
         $elements = explode(",", $contents);
 
-
         /*
-         * Inserting elements to the B-tree
+         * Sortig elements
          */
-        foreach ($elements as $e) {
-            $b->insert($e);
-        }
+        sort($elements);
 
         /*
          * Display the given binary tree elements(keys)
          */
-        echo "\nGiven B-tree elements:\n";
-        $b->display();
+        echo "\nGiven elements in sorted order:\n";
+
+        echo implode(",", $elements);
 
         /*
-         * Searching
+         * Binary Search
          */
         echo "\n\nSearching item " . $search_item . ":\n";
-        $b->find($search_item);
+
+        $index = self::binarySearch($elements, $search_item);
+        if ($index === NULL) {
+            echo "\n\nResult:Item Not found\n\n";
+        } else {
+            echo "\n\nResult:Item found at index " . $index . "\n\n";
+        }
+
+    }
+
+    public static function binarySearch($elements, $search_item)
+    {
+
+        echo "\nExecution flow:\n\n";
+        echo "\n Step1:Set L to 0 and R to n − 1.";
+        $L = 0;
+        $R = count($elements) - 1;
+        $T = $search_item;
+        $A = $elements;
+
+        echo "\n\n Step2:If L(=" . $L . ") > R(=" . $R . "), the search terminates as unsuccessful.";
+
+        while ($L <= $R) {
+
+            $m = (int)(($L + $R) / 2);
+
+            echo "\n\n Step3: Set m(=" . $m . ") (the position of the middle element) to the floor (the largest previous integer) of (L(=" . $L . ") + R(=" . $R . ")) / 2.";
+
+
+            if ($A[$m] < $T) {
+
+                echo "\n\n Step4: As Am(=" . $A[$m] . ") < T(=" . $T . "), setting L to m(=" . $m . ") + 1 and go to step 2.";
+                $L = $m + 1;
+            } else if ($A[$m] > $T) {
+
+                echo "\n\n Step5: As Am(=" . $A[$m] . ") > T(=" . $T . "), set R to m − 1 and go to step 2.";
+                $R = $m - 1;
+
+            } else if ($A[$m] == $T) {
+
+                echo "\n\nStep6: Now Am(=" . $A[$m] . ") = T(=" . $T . "), the search is done; return m(=" . $m . ").";
+
+                return $m;
+            }
+
+        }
+        return NULL;
 
     }
 
