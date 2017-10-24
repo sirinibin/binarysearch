@@ -29,7 +29,7 @@ This iterative procedure keeps track of the search boundaries with two variables
 
 Reference:https://en.m.wikipedia.org/wiki/Binary_search_algorithm
 
-
+```
 
 
 INSTALLATION & EXECUTION
