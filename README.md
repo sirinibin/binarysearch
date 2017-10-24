@@ -5,6 +5,31 @@
 
 This is a Binary search example using console
 
+
+
+ALGORITHM USED
+
+```
+
+Given an array A of n elements with values or records A0, A1, ..., An−1, sorted such that A0 ≤ A1 ≤ ... ≤ An−1, and target value T, the following subroutine uses binary search to find the index of T in A.[7]
+
+Step1: Set L to 0 and R to n − 1.
+
+Step2: If L > R, the search terminates as unsuccessful.
+
+Step3: Set m (the position of the middle element) to the floor (the largest previous integer) of (L + R) / 2.
+
+Step4: If Am < T, set L to m + 1 and go to step 2.
+
+Step5: If Am > T, set R to m − 1 and go to step 2.
+
+Step6: Now Am = T, the search is done; return m.
+
+This iterative procedure keeps track of the search boundaries with two variables. Some implementations may check whether the middle element is equal to the target at the end of the procedure. This results in a faster comparison loop, but requires one more iteration on average.[8]
+
+Reference:https://en.m.wikipedia.org/wiki/Binary_search_algorithm
+
+
 INSTALLATION & EXECUTION
 
 ```
@@ -46,23 +71,3 @@ Step6: Now Am(= 300) = T(=300), the search is done; return m(=7).
 
 Result:Item is present at index 7
 
-Algorithm
-
-```
-Given an array A of n elements with values or records A0, A1, ..., An−1, sorted such that A0 ≤ A1 ≤ ... ≤ An−1, and target value T, the following subroutine uses binary search to find the index of T in A.[7]
-
-Step1: Set L to 0 and R to n − 1.
-
-Step2: If L > R, the search terminates as unsuccessful.
-
-Step3: Set m (the position of the middle element) to the floor (the largest previous integer) of (L + R) / 2.
-
-Step4: If Am < T, set L to m + 1 and go to step 2.
-
-Step5: If Am > T, set R to m − 1 and go to step 2.
-
-Step6: Now Am = T, the search is done; return m.
-
-This iterative procedure keeps track of the search boundaries with two variables. Some implementations may check whether the middle element is equal to the target at the end of the procedure. This results in a faster comparison loop, but requires one more iteration on average.[8]
-
-Reference:https://en.m.wikipedia.org/wiki/Binary_search_algorithm
